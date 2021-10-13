@@ -40,7 +40,7 @@ namespace DelegateRealtimeExample
             //Employee.PromoteEmployee(lstEmployess, x => x.Experience > 5);
             Console.WriteLine("Salary Based Promoted Employee.\n");
             Employee.PromoteEmployee(lstEmployess, sBasePromote);
-
+            Console.WriteLine("......................................");
             Console.WriteLine("\n\n\nExperience Based Promoted Employee.\n");
             Employee.PromoteEmployee(lstEmployess, sBasePromote);
 
