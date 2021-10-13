@@ -3,10 +3,36 @@ using System.Collections.Generic;
 
 namespace DelegateRealtimeExample
 {
-    class Program
+    public class Parent
     {
+        public int parentID { get; set; }
+    }
+    public class Child : Parent
+    {
+        public Child() : base()
+        {
+            
+        }
+        public string childId { get; set; } = "8";
+    }
+    
+    class Program
+    {        
         static void Main(string[] args)
         {
+            Parent parent = new Parent();
+            parent.parentID = 1;
+
+            Child child = new Child {parentID=82,childId="784" };
+
+            parent = child;
+
+            var test = parent.GetType().GetProperties().GetValue(0);
+
+            double xdd = 1.52;
+            int eee =(int) xdd;
+
+
             Employee emp1 = new Employee()
             {
                 ID = 101,
