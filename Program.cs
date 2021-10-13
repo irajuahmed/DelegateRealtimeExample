@@ -34,15 +34,25 @@ namespace DelegateRealtimeExample
             lstEmployess.Add(emp1);
             lstEmployess.Add(emp2);
             lstEmployess.Add(emp3);
-            EligibleToPromotion eligibleTopromote = new EligibleToPromotion(Promote);
-            
+            EligibleToPromotion sBasePromote = new EligibleToPromotion(SalaryBasePromote);
+            EligibleToPromotion eBasePromote = new EligibleToPromotion(ExperienceBasePromote);
+
             //Employee.PromoteEmployee(lstEmployess, x => x.Experience > 5);
-            Employee.PromoteEmployee(lstEmployess, eligibleTopromote);
-            
+            Console.WriteLine("Salary Based Promoted Employee.\n");
+            Employee.PromoteEmployee(lstEmployess, sBasePromote);
+
+            Console.WriteLine("\n\n\nExperience Based Promoted Employee.\n");
+            Employee.PromoteEmployee(lstEmployess, sBasePromote);
+
             Console.ReadKey();
         }
 
-        public static bool Promote(Employee employee)
+        public static bool ExperienceBasePromote(Employee employee)
+        {
+            return employee.Experience < 10 ? true : false;
+        }
+
+        public static bool SalaryBasePromote(Employee employee)
         {
             if (employee.Salary > 10000)
             {
