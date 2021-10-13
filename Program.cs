@@ -54,14 +54,7 @@ namespace DelegateRealtimeExample
 
         public static bool SalaryBasePromote(Employee employee)
         {
-            if (employee.Salary > 10000)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return employee.Salary > 10000;
         }
     }
 
