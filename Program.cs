@@ -8,11 +8,7 @@ namespace DelegateRealtimeExample
         public int parentID { get; set; }
     }
     public class Child : Parent
-    {
-        public Child() : base()
-        {
-            
-        }
+    {        
         public string childId { get; set; } = "8";
     }
     
@@ -20,6 +16,7 @@ namespace DelegateRealtimeExample
     {        
         static void Main(string[] args)
         {
+
             Parent parent = new Parent();
             parent.parentID = 1;
 
@@ -27,6 +24,8 @@ namespace DelegateRealtimeExample
 
             parent = child;
 
+            Child c2 =(Child) parent;
+            
             var test = parent.GetType().GetProperties().GetValue(0);
 
             double xdd = 1.52;
