@@ -22,6 +22,7 @@ namespace DelegateRealtimeExample
 
             Child child = new Child {parentID=82,childId="784" };
 
+
             parent = child;
 
             Child c2 =(Child) parent;
