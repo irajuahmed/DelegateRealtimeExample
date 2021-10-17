@@ -22,53 +22,56 @@ namespace DelegateRealtimeExample
 
             Child child = new Child {parentID=82,childId="784" };
 
-
             parent = child;
 
-            Child c2 =(Child) parent;
-            
-            var test = parent.GetType().GetProperties().GetValue(0);
+            var dopds = parent.GetType().GetProperty("parentID");
 
-            double xdd = 1.52;
-            int eee =(int) xdd;
-
-
-            Employee emp1 = new Employee()
+            foreach (var item in parent.GetType().GetProperties())
             {
-                ID = 101,
-                Name = "Pranaya",
-                Gender = "Male",
-                Experience = 5,
-                Salary = 10000
-            };
-            Employee emp2 = new Employee()
-            {
-                ID = 102,
-                Name = "Priyanka",
-                Gender = "Female",
-                Experience = 10,
-                Salary = 20000
-            };
-            Employee emp3 = new Employee()
-            {
-                ID = 103,
-                Name = "Anurag",
-                Experience = 15,
-                Salary = 30000
-            };
-            List<Employee> lstEmployess = new List<Employee>();
-            lstEmployess.Add(emp1);
-            lstEmployess.Add(emp2);
-            lstEmployess.Add(emp3);
-            EligibleToPromotion sBasePromote = new EligibleToPromotion(SalaryBasePromote);
-            EligibleToPromotion eBasePromote = new EligibleToPromotion(ExperienceBasePromote);
+                Console.WriteLine(item.Name);
+                Console.WriteLine("------------------------------------");
+            }
 
-            //Employee.PromoteEmployee(lstEmployess, x => x.Experience > 5);
-            Console.WriteLine("Salary Based Promoted Employee.\n");
-            Employee.PromoteEmployee(lstEmployess, sBasePromote);
-            Console.WriteLine("......................................");
-            Console.WriteLine("\n\n\nExperience Based Promoted Employee.\n");
-            Employee.PromoteEmployee(lstEmployess, sBasePromote);
+            //double xdd = 1.52;
+            //int eee =(int) xdd;
+
+
+            //Employee emp1 = new Employee()
+            //{
+            //    ID = 101,
+            //    Name = "Pranaya",
+            //    Gender = "Male",
+            //    Experience = 5,
+            //    Salary = 10000
+            //};
+            //Employee emp2 = new Employee()
+            //{
+            //    ID = 102,
+            //    Name = "Priyanka",
+            //    Gender = "Female",
+            //    Experience = 10,
+            //    Salary = 20000
+            //};
+            //Employee emp3 = new Employee()
+            //{
+            //    ID = 103,
+            //    Name = "Anurag",
+            //    Experience = 15,
+            //    Salary = 30000
+            //};
+            //List<Employee> lstEmployess = new List<Employee>();
+            //lstEmployess.Add(emp1);
+            //lstEmployess.Add(emp2);
+            //lstEmployess.Add(emp3);
+            //EligibleToPromotion sBasePromote = new EligibleToPromotion(SalaryBasePromote);
+            //EligibleToPromotion eBasePromote = new EligibleToPromotion(ExperienceBasePromote);
+
+            ////Employee.PromoteEmployee(lstEmployess, x => x.Experience > 5);
+            //Console.WriteLine("Salary Based Promoted Employee.\n");
+            //Employee.PromoteEmployee(lstEmployess, sBasePromote);
+            //Console.WriteLine("......................................");
+            //Console.WriteLine("\n\n\nExperience Based Promoted Employee.\n");
+            //Employee.PromoteEmployee(lstEmployess, sBasePromote);
 
             Console.ReadKey();
         }
